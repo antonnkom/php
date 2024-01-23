@@ -1,3 +1,12 @@
+:root {
+    --danger: #dc3545;
+    --danger-hover: #dc3534;
+    --danger-active: #da1717;
+    --primary: #007bff;
+    --primary-hover: #007bdd;
+    --primary-active: #0007ee;
+}
+
 .calc-row {
     height: 100vh;
     font-family: 'Share Tech Mono', monospace;
@@ -6,4 +15,48 @@
 .input-window {
     text-align: end;
     font-size: x-large;
+}
+
+.card {
+    background-color: #000;
+}
+
+#btn_clr,
+#btn_clr:focus,
+#btn_clr:visited {
+    border: 1px solid #000;
+    color: #fff;
+    background-color: var(--danger);
+    box-shadow: none;
+}
+
+#btn_clr:hover {
+    background-color: var(--danger-hover);
+    border-color: #000;
+    box-shadow: none;
+}
+
+#btn_clr:active {
+    background-color: var(--danger-active);
+    border-color: var(--danger-active);
+    box-shadow: none;
+}
+
+.btn-outline-primary,
+.btn-outline-primary:focus,
+.btn-outline-primary:visited {
+    background-color: var(--primary);
+    border-color: #000;
+    box-shadow: none;
+    color: #fff;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.row > .col > .btn.btn-outline-primary:active {
+    background-color: var(--primary-active);
+    border-color: var(--primary-active);
+    box-shadow: none;
 }
