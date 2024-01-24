@@ -119,6 +119,10 @@ addEventListener('click', (e) => {
 
             case 'equals':
                 operation = indexButton;
+                if (result === '' || lastOrepation === null) {
+                    result = inputWindow.value;
+                    lastOrepation = operation;
+                }
                 result = getEquals(lastOrepation, result, inputWindow.value);
                 lastOperand === null;
                 lastOrepation === null;
@@ -178,6 +182,7 @@ function getEquals(oper, res, val) {
             break;
 
         case 'sqrt':
+        case 'equals':
             return res;
             break;
     }
