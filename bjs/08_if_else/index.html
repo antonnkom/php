@@ -9,104 +9,104 @@
     <link rel="stylesheet" href="style.css" type="text/css"/>
 </head>
 <body>
-<header>
-    <nav>
-        <ul>
-            <li><a href="../07_Number_and_string/index.html">Калькулятор</a></li>
-            <li><a href="#">Угадайка</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section id="start">
-        <div class="container">
-            <div class="row">
-                <div>
-                    <h1>Игра Угадайка</h1>
-                    <p>Игрок загадывает любое целое число в выбранном диапозоне, а Робот его угадает.</p>
-                    <h2>Правила игры</h2>
-                    <ol>
-                        <li>минимальное и максимальное значения задаются игроком в начале игры</li>
-                        <li>наименьшее число, которое можно указать для диапазона <span>-999</span></li>
-                        <li>наибольшее число, которое можно указать для диапазона <span>999</span></li>
-                        <li>загаданное число должно находиться внутри заданного диапазона и должно быть целым</li>
-                        <li>ответы робота корректирует игрок с помощью кнопок "больше" и "меньше"</li>
-                    </ol>
-                    <button type="button" class="btn btn-primary" id="btnStart">Начать</button>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../07_Number_and_string/index.html">Калькулятор</a></li>
+                <li><a href="#">Угадайка</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="start">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <h1>Игра Угадайка</h1>
+                        <p>Игрок загадывает любое целое число в выбранном диапозоне, а Робот его угадает.</p>
+                        <h2>Правила игры</h2>
+                        <ol>
+                            <li>минимальное и максимальное значения задаются игроком в начале игры</li>
+                            <li>наименьшее число, которое можно указать для диапазона <span>-999</span></li>
+                            <li>наибольшее число, которое можно указать для диапазона <span>999</span></li>
+                            <li>загаданное число должно находиться внутри заданного диапазона и должно быть целым</li>
+                            <li>ответы робота корректирует игрок с помощью кнопок "больше" и "меньше"</li>
+                        </ol>
+                        <button type="button" class="btn btn-primary" id="btnStart">Начать</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="game" class="hidden">
-        <div class="container">
-            <div class="row">
-                <div class="card text-center">
-                    <div class="card-header">
-                        <p class="m-0">Вопрос №<span id="orderNumberField">5</span></p>
-                    </div>
-                    <div class="card-body">
-                        <div class="row no-gutters">
-                            <div class="col">
-                                <h3 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h3>
+        <section id="game" class="hidden">
+            <div class="container">
+                <div class="row">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <p class="m-0">Вопрос №<span id="orderNumberField">5</span></p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row no-gutters">
+                                <div class="col">
+                                    <h3 class="card-title m-0"><span id="answerField">Вы загадали число 5?</span></h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="btn-group">
-                            <button class="btn btn-primary" id="btnLess">&#129047;<br>меньше</button>
-                            <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
-                            <button class="btn btn-primary" id="btnOver">больше<br>&#129045;</button>
+                        <div class="card-body">
+                            <div class="btn-group">
+                                <button class="btn btn-primary" id="btnLess">&#129047;<br>меньше</button>
+                                <button class="btn btn-success btn-lg" id="btnEqual">Верно!</button>
+                                <button class="btn btn-primary" id="btnOver">больше<br>&#129045;</button>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-secondary" id="btnRetry">Заново</button>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <button class="btn btn-secondary" id="btnRetry">Заново</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="range" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Задайте диапазон</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="min-value" class="col-form-label">Введите минимальное значение:</label>
+                                <input type="text" class="form-control" id="min-value">
+
+                                <label for="max-value" class="col-form-label">Введите максимальное значение:</label>
+                                <input type="text" class="form-control" id="max-value">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnSave">Сохранить изменения</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="range" class="modal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Задайте диапазон</h5>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="min-value" class="col-form-label">Введите минимальное значение:</label>
-                            <input type="text" class="form-control" id="min-value">
-
-                            <label for="max-value" class="col-form-label">Введите максимальное значение:</label>
-                            <input type="text" class="form-control" id="max-value">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnSave">Сохранить изменения</button>
+        <section id="go" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btnGo">Играть</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="go" class="modal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <p></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnGo">Играть</button>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-<footer>
-    <p>&#169;Copyright Anton Komarov, 2024</p>
-</footer>
+        </section>
+    </main>
+    <footer>
+        <p>&#169;Copyright Anton Komarov, 2024</p>
+    </footer>
 <script src="script.js"></script>
 </body>
 </html>
