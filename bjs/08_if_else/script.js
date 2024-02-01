@@ -56,12 +56,12 @@ addEventListener('click', (e) => {
                 break;
 
             case 'btnRetry':
-                getRange(0, 100);
+                getRange();
                 gameSection.style.display = '';
                 break;
 
             case 'btnStart':
-                getRange(0, 100);
+                getRange();
                 document.querySelector('#start').style.display = 'none';
                 break;
 
@@ -202,7 +202,7 @@ function convertNumbersToWords(num) {
     return (strNum.length > 20) ? num : strNum;
 }
 
-function getRange(minVal, maxVal) {
+function getRange(minVal = 0, maxVal = 100) {
     rangeSection.style.display = 'block';
     minField.value = minVal;
     maxField.value = maxVal;
