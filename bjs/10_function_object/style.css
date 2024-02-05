@@ -1,0 +1,87 @@
+:root {
+    --border-black: rgba(0,0,0,.3);
+    --bg-blue: rgb(0, 167, 215, .7);
+    --font-grey: rgb(111, 121, 128, .8);
+    --dark-blue: #0069d9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    padding: 1rem;
+}
+
+.card.text-center {
+    border-color: var(--border-black);
+}
+
+p {
+    display: flex;
+}
+
+span {
+    display: block;
+    box-sizing: border-box;
+    padding: .45rem 0;
+}
+
+span:first-of-type {
+    width: 30%;
+    text-align: left;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-shadow: 0 0 3px var(--dark-blue);
+}
+
+span:nth-of-type(even) {
+    width: 70%;
+    text-align: right;
+    padding: .45rem .6rem;
+    margin: 0 .7rem;
+    background-color: #fff;
+    border: 1px solid var(--border-black);
+    border-radius: 0.15rem;
+    color: var(--font-grey);
+    box-shadow: inset #000 0px 0px 0.5rem -5px;
+    text-transform: uppercase;
+}
+
+.card-body {
+    background-color: var(--bg-blue);
+}
+
+.card > .card-header {
+    background-color: var(--dark-blue);
+}
+
+.card-header > p {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.card-body + .card-footer {
+    background-color: var(--bg-blue);
+}
+
+#btnGenerate:focus,
+#btnReset:focus {
+    box-shadow: none;
+}
+
+.card-footer .btn {
+    width: 49%;
+}
+
+footer {
+    padding: 1rem;
+}
+
+section {
+    padding: 2rem 0;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Генератор случайных пользователей</title>
@@ -9,30 +9,44 @@
     <link rel="stylesheet" href="style.css" type="text/css"/>
 </head>
 <body>
-<div class="container">
-    <div class="row game-card align-items-center">
-        <div class="col col-md-6 offset-md-3">
-            <div class="card text-center">
-                <div class="card-header">
-                    <p class="m-0">Окно результатов генерации</p>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <h3 class="card-title"><span id="surnameOutput">Генерация фамилии</span></h3>
-                            <h4>Имя: <span id="firstNameOutput">Иван</span></h4>
-                            <p>
-                                <span id="genderOutput">Генерация пола</span>
-                                <span>, </span>
-                                <span id="birthYearOutput">Генерация года рождения</span>
-                            </p>
+<header>
+    <nav></nav>
+</header>
+
+<main>
+    <section id="generate">
+        <div class="container">
+            <div class="row game-card align-items-center">
+                <div class="col col-md-6 offset-md-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <p class="m-0">Окно результатов генерации</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <p><span>Фамилия: </span><span id="surnameOutput">Фамилия</span></p>
+                                    <p><span>Имя: </span><span id="firstNameOutput">Иван</span></p>
+                                    <p><span>Отчество: </span><span id="middleNameOutput">Отчество</span></p>
+                                    <p><span>Пол: </span><span id="genderOutput">Генерация пола</span></p>
+                                    <p><span>Дата рождения: </span><span id="birthYearOutput">Генерация года рождения</span></p>
+                                    <p><span>Профессия: </span><span id="jobOutput">Профессия</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary" id="btnGenerate">Генерировать</button>
+                            <button class="btn btn-secondary" id="btnReset">Сбросить</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+</main>
+
+<footer></footer>
+
 <script src="personGenerator.js"></script>
 <script src="init.js"></script>
 </body>
