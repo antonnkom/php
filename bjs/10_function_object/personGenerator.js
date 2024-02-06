@@ -50,26 +50,6 @@ const personGenerator = {
             "id_10": "Анастасия"
         }
     }`,
-    middleNameMaleJson: `{
-        "count": 15,
-        "list": {
-            "id_1": "Викторович",
-            "id_2": "Сергеевич",
-            "id_3": "Олегович",
-            "id_4": "Петрович",
-            "id_5": "Максивович",
-            "id_6": "Генадьевич",
-            "id_7": "Михайлович",
-            "id_8": "Дмитриевич",
-            "id_9": "Андреевич",
-            "id_10": "Иванович",
-            "id_11": "Фёдорович",
-            "id_12": "Николаевич",
-            "id_13": "Александрович",
-            "id_14": "Евгениевич",
-            "id_15": "Владимирович"
-        }
-    }`,
     monthOfBirthJson: `{
         "count": 12,
         "list": {
@@ -140,8 +120,16 @@ const personGenerator = {
     },
 
     randomMiddleName: function (gender) {
-        let milldeName = this.randomValue(this.middleNameMaleJson);
-        return gender === this.GENDER_MALE ? milldeName : milldeName.slice(0, -2) + 'на';
+        let name = this.randomValue(this.firstNameMaleJson);
+        if (name.slice(-1) === 'й') {
+            return gender === 'Мужчина' ? name.slice(0, -1) + 'евич' : name.slice(0, -1) + 'евна';
+        } else if (name.slice(-1) === 'а') {
+            return gender === 'Мужчина' ? name.slice(0, -1) + 'ич' : name.slice(0, -1) + 'ична';
+        } else if (name === 'Михаил') {
+            return gender === 'Мужчина' ? name.slice(0, -2) + 'йлович' : name.slice(0, -2) + 'йловна';
+        } else {
+            return gender === 'Мужчина' ? name + 'ович' : name + 'овна';
+        }
     },
 
     randomYearOfBirth: function () {
